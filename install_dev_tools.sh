@@ -1,16 +1,5 @@
 #!/bin/bash
 
-# Script for installing Docker, Docker Compose, Python, and Django
-# Checks if tools are already installed to avoid duplication
-
-set -e  # Exit on any error
-
-echo "Starting installation of development tools..."
-
-# Update package list
-echo "Updating package list..."
-sudo apt update
-
 # Install Docker
 if ! command -v docker &> /dev/null; then
     echo "Installing Docker..."
@@ -54,4 +43,3 @@ else
 fi
 
 echo "All development tools installation completed!"
-echo "Please log out and log back in for Docker group changes to take effect."

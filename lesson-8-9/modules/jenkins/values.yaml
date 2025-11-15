@@ -1,0 +1,13 @@
+controller:
+  serviceType: LoadBalancer
+  adminUser: admin
+  adminPassword: "admin123" # change in production
+
+rbac:
+  create: true
+
+serviceAccount:
+  create: true
+  name: jenkins-sa
+
+
