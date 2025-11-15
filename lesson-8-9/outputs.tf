@@ -62,3 +62,20 @@ output "eks_node_role_arn" {
   value       = module.eks.eks_node_role_arn
 }
 
+#-------------RDS-----------------
+
+output "db_endpoint" {
+  description = "Primary DB endpoint (Aurora cluster endpoint or RDS instance address)"
+  value       = module.rds.endpoint
+}
+
+output "db_reader_endpoint" {
+  description = "Reader endpoint (Aurora only; null for single RDS instance)"
+  value       = try(module.rds.reader_endpoint, null)
+}
+
+output "db_security_group_id" {
+  description = "Security group protecting the database"
+  value       = module.rds.security_group_id
+}
+
