@@ -1,0 +1,18 @@
+grafana:
+    adminPassword: 'admin123'
+    service:
+        type: ClusterIP
+        port: 80
+    persistence:
+        enabled: false
+
+prometheus:
+    service:
+        type: ClusterIP
+    prometheusSpec:
+        retention: 15d
+
+alertmanager:
+    service:
+        type: ClusterIP
+    alertmanagerSpec: {}
